@@ -105,7 +105,7 @@ export class CustomReuseStrategy implements RouteReuseStrategy {
       return detachedTree;
     }
 
-    return null;
+    return stored ? stored.handle : null;
   }
 
   shouldReuseRoute(
