@@ -105,6 +105,10 @@ export class CustomReuseStrategy implements RouteReuseStrategy {
       return detachedTree;
     }
 
+    if (this.isToBeIgnored(route, 'pre-retrieve')) {
+      return null;
+    }
+
     return stored ? stored.handle : null;
   }
 
